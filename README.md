@@ -1,4 +1,6 @@
 # Varroa-Infestation-Prediction
+**Author:** Evan Kennedy
+
 
 ## Repository Description
 The following repository houses utilities to create a predictive model for Varroa Mite infestations of Apis Mellifera (Western Honeybee) colonies.
