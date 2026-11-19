@@ -23,6 +23,24 @@ More advanced users may also clone the repository via git for local use, but sho
  - Note: Cloning the repository is NOT necessary to ensure the latest functionalities are being used locally
 
 
+## Using this Repository
+To use the main utilities of the project, pipeline.yml and predict.yml, two prerequisite steps are required:
+ - Docker Desktop must be open in the background. This is necessary to enable the Docker daemon that the Docker Compose files use.
+     - If help is needed: https://www.docker.com/products/docker-desktop/
+ - ClearML API credentials must be configured for the system. These are used for logging model performance in the ClearML Web UI.
+     - If help is needed: https://clear.ml/docs/latest/docs/webapp/settings/webapp_settings_profile/
+
+Once these prerequisites are satisfied, pipeline.yml and predict.yml can be run using the methods described above, for the following results
+(all based on the configurations specified in the /configs files, as explained above):
+ - pipeline.yml:
+    - Tensors data file in pipeline/outputs [Not for user interaction]
+    - Model file in pipeline/outputs [Not for user interaction]
+    - A prediction in the 'predictions' folder (the folder will appear if it was absent)
+    - Model performance metrics in the ClearML Web UI, in the project 'Varroa Infestation Prediction', within the task 'XGBoost Optuna HPO'
+ - predict.yml (if run properly, only after pipeline.yml has already created a model):
+    - A prediction in the 'predictions' folder (the folder will appear if it was absent)
+
+
 ## Repository Components
 ### /data
 A folder containing 6 .csv files. These files are included as a demonstration, and are the files used as reference when the model was originally developed.
@@ -130,21 +148,3 @@ A file used in running the pipeline and the predictor, not interacted with direc
 A text file encoding the installation requirements for running the pipeline. It is not necessary for the user to interact with it.
 
 Note: Can be used as a reference if wishing to run the notebooks individually within a virtual environment, though this approach is not the recommended one.
-
-
-## Using this Repository
-To use the main utilities of the project, pipeline.yml and predict.yml, two prerequisite steps are required:
- - Docker Desktop must be open in the background. This is necessary to enable the Docker daemon that the Docker Compose files use.
-     - If help is needed: https://www.docker.com/products/docker-desktop/
- - ClearML API credentials must be configured for the system. These are used for logging model performance in the ClearML Web UI.
-     - If help is needed: https://clear.ml/docs/latest/docs/webapp/settings/webapp_settings_profile/
-
-Once these prerequisites are satisfied, pipeline.yml and predict.yml can be run using the methods described above, for the following results
-(all based on the configurations specified in the /configs files, as explained above):
- - pipeline.yml:
-    - Tensors data file in pipeline/outputs [Not for user interaction]
-    - Model file in pipeline/outputs [Not for user interaction]
-    - A prediction in the 'predictions' folder (the folder will appear if it was absent)
-    - Model performance metrics in the ClearML Web UI, in the project 'Varroa Infestation Prediction', within the task 'XGBoost Optuna HPO'
- - predict.yml (if run properly, only after pipeline.yml has already created a model):
-    - A prediction in the 'predictions' folder (the folder will appear if it was absent)
