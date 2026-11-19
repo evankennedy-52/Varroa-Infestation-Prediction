@@ -23,7 +23,7 @@ More advanced users may also clone the repository via git for local use, but sho
  - Note: Cloning the repository is NOT necessary to ensure the latest functionalities are being used locally
 
 
-## Using this Repository
+## Using this Repository (Quick Start: Recommended to Read Below First)
 To use the main utilities of the project, pipeline.yml and predict.yml, two prerequisite steps are required:
  - Docker Desktop must be open in the background. This is necessary to enable the Docker daemon that the Docker Compose files use.
      - If help is needed: https://www.docker.com/products/docker-desktop/
